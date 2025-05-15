@@ -23,15 +23,15 @@ const navigateTo = async (pageId) => {
 	if (pageLoader) {
 		const page = await pageLoader();
 		render(page);
-		window.history.pushState({ pageId }, "", `#${pageId}`);
+		// window.history.pushState({ pageId }, "", `#${pageId}`);
 	}
 };
 
-window.addEventListener("popstate", (event) => {
-	if (event.state?.pageId) {
-		navigateTo(event.state.pageId);
-	}
-});
+// window.addEventListener("popstate", (event) => {
+// 	if (event.state?.pageId) {
+// 		navigateTo(event.state.pageId);
+// 	}
+// });
 
 render(homePage);
 
